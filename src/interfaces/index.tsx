@@ -1,9 +1,12 @@
+import { Dispatch, SetStateAction } from 'react'
+
+type Dispatcher<S> = Dispatch<SetStateAction<S>>
+
 export interface DefaultComponentProps {
-  children?: React.ReactNode
+  children: React.ReactNode
 }
-export interface JumbotronProps {
+export interface JumbotronProps extends DefaultComponentProps {
   direction?: string
-  children?: React.ReactNode
 }
 
 export interface ImageProps {
@@ -11,7 +14,13 @@ export interface ImageProps {
   alt: string
 }
 
-export interface LinkProps {
-  children: React.ReactNode
+export interface LinkProps extends DefaultComponentProps {
   href: string
+}
+
+export interface AccordionProps extends DefaultComponentProps {}
+
+export interface ToggleProps {
+  toggleShow: boolean
+  setToggleShow: Dispatcher<boolean>
 }
