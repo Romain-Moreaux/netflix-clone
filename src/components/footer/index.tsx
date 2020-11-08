@@ -32,6 +32,6 @@ Footer.Title = ({ children, ...restProps }: DefaultComponentProps) => {
 Footer.Text = ({ children, ...restProps }: DefaultComponentProps) => {
   return <Text {...restProps}>{children}</Text>
 }
-Footer.Break = ({ ...restProps }: DefaultComponentProps) => {
+Footer.Break = ({ ...restProps }: Partial<DefaultComponentProps>) => {
   return <Break {...restProps} />
 }
