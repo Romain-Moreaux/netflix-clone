@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro'
-import { JumboProps } from '../index'
+import { JumbotronProps } from '../../../interfaces/index'
 
-export const Inner = styled.div<JumboProps>`
+export const Inner = styled.div<JumbotronProps>`
   display: flex;
   align-item: center;
   justify-content: space-between;
@@ -18,7 +18,6 @@ export const Pane = styled.div`
 
   @media (max-width: 1000px) {
     width: 100%;
-    padding: 0 45px;
     text-align: center;
   }
 `
