@@ -1,5 +1,10 @@
 import React, { createContext, ReactElement, useContext, useState } from 'react'
-import { DefaultComponentProps, ToggleProps } from '../../interfaces'
+import { Transition } from 'react-transition-group'
+import {
+  AnimateProps,
+  DefaultComponentProps,
+  ToggleProps,
+} from '../../interfaces'
 import {
   Container,
   Inner,
@@ -66,8 +71,22 @@ Accordion.Header = function AccordionHeader({
 Accordion.Body = function AccordionBody({
   children,
   ...restProps
-}: DefaultComponentProps): ReactElement | null {
+}: AnimateProps): ReactElement | null {
   const { toggleShow } = useContext(ToggleContext)
 
-  return toggleShow ? <Body {...restProps}>{children}</Body> : null
+  return (
+    <Transition<undefined>
+      in={toggleShow}
+      timeout={250}
+      unmountOnExit
+      mountOnEnter
+    >
+      {(animationState: string) => (
+        // state change: exited -> entering -> entered -> exiting -> exited
+        <Body {...restProps} state={animationState}>
+          {children}
+        </Body>
+      )}
+    </Transition>
+  )
 }

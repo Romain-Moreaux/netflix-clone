@@ -24,3 +24,7 @@ export interface ToggleProps {
   toggleShow: boolean
   setToggleShow: Dispatcher<boolean>
 }
+
+export interface AnimateProps extends DefaultComponentProps {
+  state?: string
+}

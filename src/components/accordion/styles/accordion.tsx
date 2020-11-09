@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro'
+import { AnimateProps } from '../../../interfaces/index'
 
 export const Container = styled.div`
   display: flex;
@@ -62,16 +63,18 @@ export const Header = styled.div`
     font-size: 16px;
   }
 `
-
-export const Body = styled.div`
-  max-height: 1200px;
+export const Body = styled.div<AnimateProps>`
   max-width: 100%;
+  overflow: hidden;
+  padding: ${({ state }) =>
+    state === 'entered' || state === 'exiting' ? '0.8em 1.2em' : '0'};
+  max-height: ${({ state }) =>
+    state === 'entering' || state === 'exiting' ? 0 : 400}px;
   transition: max-height 0.25s cubic-bezier(0.5, 0, 0.1, 1);
   font-size: 26px;
   font-weight: normal;
   line-height: normal;
   background: #303030;
-  padding: 0.8em 2.2em 0.8em 1.2em;
   white-space: pre-wrap;
   user-select: none;
   @media (max-width: 600px) {
