@@ -18,8 +18,6 @@ export interface LinkProps extends DefaultComponentProps {
   href: string
 }
 
-export interface AccordionProps extends DefaultComponentProps {}
-
 export interface ToggleProps {
   toggleShow: boolean
   setToggleShow: Dispatcher<boolean>
