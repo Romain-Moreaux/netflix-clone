@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react'
 import { Accordion, OptForm } from '../components'
 import faqsData from '../fixtures/faqs.json'
 
-export default function FaqContainer(): ReactElement {
+export default function FaqsContainer(): ReactElement {
   return (
     <Accordion>
       <Accordion.Title>Frequently Asked Questions</Accordion.Title>

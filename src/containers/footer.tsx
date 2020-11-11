@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import { Footer } from '../components'
 
-export const FooterContainer = () => {
+export default function FooterContainer(): ReactElement {
   return (
     <Footer>
       <Footer.Title>Questions? Contact us.</Footer.Title>
