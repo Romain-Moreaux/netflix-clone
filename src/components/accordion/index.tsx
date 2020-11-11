@@ -28,16 +28,18 @@ export default function Accordion({
   )
 }
 
-Accordion.Title = ({ children, ...restProps }: DefaultComponentProps) => {
-  return <Title {...restProps}>{children}</Title>
-}
-Accordion.Frame = ({ children, ...restProps }: DefaultComponentProps) => {
-  return <Frame {...restProps}>{children}</Frame>
-}
+Accordion.Title = ({ children, ...restProps }: DefaultComponentProps) => (
+  <Title {...restProps}>{children}</Title>
+)
+
+Accordion.Frame = ({ children, ...restProps }: DefaultComponentProps) => (
+  <Frame {...restProps}>{children}</Frame>
+)
+
 Accordion.Item = function AccordionTitle({
   children,
   ...restProps
-}: DefaultComponentProps): ReactElement {
+}: DefaultComponentProps) {
   const [toggleShow, setToggleShow] = useState<boolean>(false)
 
   return (
@@ -50,7 +52,7 @@ Accordion.Item = function AccordionTitle({
 Accordion.Header = function AccordionHeader({
   children,
   ...restProps
-}: DefaultComponentProps): ReactElement {
+}: DefaultComponentProps) {
   const { toggleShow, setToggleShow } = useContext(ToggleContext)
 
   return (
@@ -71,7 +73,7 @@ Accordion.Header = function AccordionHeader({
 Accordion.Body = function AccordionBody({
   children,
   ...restProps
-}: AnimateProps): ReactElement | null {
+}: AnimateProps) {
   const { toggleShow } = useContext(ToggleContext)
 
   return (

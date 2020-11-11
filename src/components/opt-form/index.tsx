@@ -9,28 +9,16 @@ export default function OptForm({
   return <Container {...restProps}>{children}</Container>
 }
 
-OptForm.Input = function OptFormInput({ ...restProps }) {
-  return <Input {...restProps} />
-}
+OptForm.Input = ({ ...restProps }) => <Input {...restProps} />
 
-OptForm.Button = function OptFormButton({
-  children,
-  ...restProps
-}: DefaultComponentProps) {
-  return (
-    <Button {...restProps}>
-      {children} <img src="/images/icons/chevron-right.png" alt="Try Now" />
-    </Button>
-  )
-}
+OptForm.Button = ({ children, ...restProps }: DefaultComponentProps) => (
+  <Button {...restProps}>
+    {children} <img src="/images/icons/chevron-right.png" alt="Try Now" />
+  </Button>
+)
 
-OptForm.Text = function OptFormText({
-  children,
-  ...restProps
-}: DefaultComponentProps) {
-  return <Text {...restProps}>{children}</Text>
-}
+OptForm.Text = ({ children, ...restProps }: DefaultComponentProps) => (
+  <Text {...restProps}>{children}</Text>
+)
 
-OptForm.Break = function OptFormBreak({ ...restProps }) {
-  return <Break {...restProps} />
-}
+OptForm.Break = ({ ...restProps }) => <Break {...restProps} />

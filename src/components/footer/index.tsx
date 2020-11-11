@@ -17,21 +17,24 @@ export default function Footer({
   return <Container {...restProps}> {children}</Container>
 }
 
-Footer.Row = ({ children, ...restProps }: DefaultComponentProps) => {
-  return <Row {...restProps}>{children}</Row>
-}
-Footer.Column = ({ children, ...restProps }: DefaultComponentProps) => {
-  return <Column {...restProps}>{children}</Column>
-}
-Footer.Link = ({ children, ...restProps }: LinkProps) => {
-  return <Link {...restProps}>{children}</Link>
-}
-Footer.Title = ({ children, ...restProps }: DefaultComponentProps) => {
-  return <Title {...restProps}>{children}</Title>
-}
-Footer.Text = ({ children, ...restProps }: DefaultComponentProps) => {
-  return <Text {...restProps}>{children}</Text>
-}
-Footer.Break = ({ ...restProps }: Partial<DefaultComponentProps>) => {
-  return <Break {...restProps} />
-}
+Footer.Row = ({ children, ...restProps }: DefaultComponentProps) => (
+  <Row {...restProps}>{children}</Row>
+)
+
+Footer.Column = ({ children, ...restProps }: DefaultComponentProps) => (
+  <Column {...restProps}>{children}</Column>
+)
+
+Footer.Link = ({ children, ...restProps }: LinkProps) => (
+  <Link {...restProps}>{children}</Link>
+)
+
+Footer.Title = ({ children, ...restProps }: DefaultComponentProps) => (
+  <Title {...restProps}>{children}</Title>
+)
+
+Footer.Text = ({ children, ...restProps }: DefaultComponentProps) => (
+  <Text {...restProps}>{children}</Text>
+)
+
+Footer.Break = () => <Break />

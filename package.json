@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@types/react-router-dom": "^5.1.6",
     "@types/react-transition-group": "^4.4.0",
     "firebase": "^8.0.1",
     "normalize.css": "^8.0.1",
